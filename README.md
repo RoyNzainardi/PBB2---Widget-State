@@ -133,38 +133,42 @@ child: Text(
             ),
           ),
 ```
-
-          // Container ketiga berisi pilihan kategori
-          Container(
+Container ketiga berisi pilihan kategori
+```dart
+Container(
             width: MediaQuery.of(context).size.width,
             color: Colors.yellow[200],
             padding: EdgeInsets.all(20.0),
             margin: EdgeInsets.fromLTRB(20.0, 5.0, 20.0, 5.0),
-
-            // Row digunakan untuk menampilkan widget secara horizontal
-            child: Row(
+```
+Row digunakan untuk menampilkan widget secara horizontal
+```dart            
+child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-
-                // Column pertama
-                Column(
+```
+Column pertama
+```dart
+Column(
                   children: [
                     Icon(Icons.food_bank),
                     Text("Food")
                   ],
                 ),
-
-                // Column kedua
-                Column(
+```
+Column kedua
+```dart
+Column(
                   children: [
                     Icon(Icons.landscape),
                     Text("Scenery")
                   ],
                 ),
-
-                // Column ketiga
-                Column(
+```
+Column ketiga
+```dart
+Column(
                   children: [
                     Icon(Icons.people),
                     Text("People")
@@ -173,36 +177,42 @@ child: Text(
               ],
             ),
           ),
-
-          // Widget counter yang memiliki state
-          CounterCard(),
+```
+Widget counter yang memiliki state
+```dart          
+CounterCard(),
         ],
       ),
     );
   }
 }
-
-// Widget CounterCard menggunakan StatefulWidget
-// StatefulWidget digunakan jika ada data yang berubah (state)
+```
+Widget CounterCard menggunakan StatefulWidget
+StatefulWidget digunakan jika ada data yang berubah (state)
+```dart
 class CounterCard extends StatefulWidget {
   const CounterCard({super.key});
 
   @override
   State<CounterCard> createState() => _CounterCardState();
 }
-
-// State dari CounterCard
+```
+State dari CounterCard
+```dart
 class _CounterCardState extends State<CounterCard> {
-
-  // Variabel state untuk menyimpan nilai counter
+```
+Variabel state untuk menyimpan nilai counter
+  ```dart
   int _counter = 0;
-
-  // Fungsi untuk menambah nilai counter
+```
+Fungsi untuk menambah nilai counter
+  ```dart
   void _incrementCounter() {
     setState(() {
-
-      // setState memberi tahu Flutter bahwa UI harus diperbarui
-      _counter++;
+```
+  setState memberi tahu Flutter bahwa UI harus diperbarui
+```dart
+_counter++;
 
     });
   }
@@ -216,20 +226,24 @@ class _CounterCardState extends State<CounterCard> {
       color: Colors.cyan[100],
 
       child: Row(
-
-        // Mengatur posisi elemen kiri dan kanan
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+```
+Mengatur posisi elemen kiri dan kanan
+```dart
+mainAxisAlignment: MainAxisAlignment.spaceBetween,
 
         children: [
+```
 
-          // Menampilkan nilai counter
-          Text(
+Menampilkan nilai counter
+```dart
+Text(
             "Counter here: $_counter",
             style: TextStyle(fontSize: 16),
           ),
-
-          // Tombol untuk menambah counter
-          Container(
+```
+Tombol untuk menambah counter
+```dart
+Container(
             color: Colors.cyan[200],
             padding: EdgeInsets.all(5.0),
 
@@ -247,3 +261,4 @@ class _CounterCardState extends State<CounterCard> {
     );
   }
 }
+```
