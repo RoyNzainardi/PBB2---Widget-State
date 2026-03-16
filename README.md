@@ -1,55 +1,67 @@
 # PBB2---Widget-State
 
-// Import library utama Flutter untuk membuat UI
+Import library utama Flutter untuk membuat UI
 ```dart
 import 'package:flutter/material.dart';
-
-// Fungsi utama aplikasi Flutter
-// Program dimulai dari sini
+```
+Fungsi utama aplikasi Flutter
+```dart
 void main() {
   runApp(const MyApp()); // Menjalankan widget MyApp sebagai root aplikasi
 }
+```
 
-// Widget utama aplikasi
-// StatelessWidget berarti tampilannya tidak memiliki state yang berubah
+Widget utama aplikasi
+StatelessWidget berarti tampilannya tidak memiliki state yang berubah
+```dart
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // Judul aplikasi
-      title: 'Flutter Demo',
-
-      // Tema aplikasi menggunakan Material Design
-      theme: ThemeData(
+```
+Judul aplikasi
+```dart      
+title: 'Flutter Demo',
+```
+Tema aplikasi menggunakan Material Design
+```dart
+theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
+```
 
-      // Halaman pertama yang ditampilkan
-      home: const RowColumnPage(),
-    );
-  }
+Halaman pertama yang ditampilkan
+
+```dart
+home: const RowColumnPage(),
+);
 }
+}
+```
 
-// Halaman utama aplikasi
-// Menggunakan StatelessWidget karena tidak ada state yang berubah
+Halaman utama aplikasi
+Menggunakan StatelessWidget karena tidak ada state yang berubah
+```dart
 class RowColumnPage extends StatelessWidget {
   const RowColumnPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-
-    // MediaQuery digunakan untuk mendapatkan ukuran layar perangkat
-    MediaQueryData mediaQueryData = MediaQuery.of(context);
+```
+  MediaQuery digunakan untuk mendapatkan ukuran layar perangkat
+  ```dart
+  MediaQueryData mediaQueryData = MediaQuery.of(context);
     double screenWidth = mediaQueryData.size.width;
     double screenHeight = mediaQueryData.size.height;
 
     return Scaffold(
-
-      // AppBar adalah bagian header di atas aplikasi
-      appBar: AppBar(
+```
+AppBar adalah bagian header di atas aplikasi
+```dart
+appBar: AppBar(
         title: const Text(
           'My First App',
           style: TextStyle(color: Colors.black),
@@ -57,37 +69,45 @@ class RowColumnPage extends StatelessWidget {
         backgroundColor: Colors.orange[200],
         centerTitle: true,
       ),
+```
 
-      // Body utama aplikasi
-      body: Column(
-
-        // Mengatur posisi widget secara horizontal
-        crossAxisAlignment: CrossAxisAlignment.center,
-
-        // Mengatur posisi widget secara vertikal
-        mainAxisAlignment: MainAxisAlignment.center,
+Body utama aplikasi
+```dart
+body: Column(
+```
+Mengatur posisi widget secara horizontal
+```dart
+crossAxisAlignment: CrossAxisAlignment.center,
+```
+Mengatur posisi widget secara vertikal
+```dart        
+mainAxisAlignment: MainAxisAlignment.center,
 
         children: <Widget>[
-
-          // Container pertama berisi gambar
-          Container(
+```
+Container pertama berisi gambar
+```dart
+Container(
             child: AspectRatio(
-
-              // Menjaga rasio gambar tetap 1:1
-              aspectRatio: 1.0,
+```
+Menjaga rasio gambar tetap 1:1
+```dart                            
+aspectRatio: 1.0,
 
               child: Container(
                 width: MediaQuery.of(context).size.width,
                 margin: EdgeInsets.fromLTRB(20.0, 5.0, 20.0, 10.0),
                 padding: EdgeInsets.all(20.0),
                 color: Colors.lightBlue[100],
-
-                // Menempatkan gambar di tengah
-                child: Center(
+```
+Menempatkan gambar di tengah
+```dart
+child: Center(
                   child: Image.network(
-
-                    // Mengambil gambar random dari internet
-                    'https://picsum.photos/200',
+```
+Mengambil gambar random dari internet
+```dart
+'https://picsum.photos/200',
 
                     fit: BoxFit.cover,
                     width: 500,
@@ -96,20 +116,23 @@ class RowColumnPage extends StatelessWidget {
               ),
             ),
           ),
-
-          // Container kedua berisi teks
-          Container(
+```
+Container kedua berisi teks
+```dart
+Container(
             width: MediaQuery.of(context).size.width,
             margin: EdgeInsets.fromLTRB(20.0, 5.0, 20.0, 10.0),
             padding: EdgeInsets.all(20.0),
             color: Colors.pink[200],
-
-            // Teks deskripsi
-            child: Text(
+```
+Teks deskripsi
+```dart
+child: Text(
               'What image is that',
               style: TextStyle(fontSize: 16),
             ),
           ),
+```
 
           // Container ketiga berisi pilihan kategori
           Container(
